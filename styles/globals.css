@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 17px;
+  /* https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/ */
+  height: -webkit-fill-available;
+}
+
+body {
+  background-color: white;
+  overflow-x: hidden;
+  /* https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/ */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+#nprogress {
+  pointer-events: none;
+  position: relative;
+}
+
+#nprogress::before {
+  content: " ";
+  width: 100vw;
+  height: 4px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background: #fff;
+}
+
+#nprogress .bar {
+  background: var(--text-theme);
+  position: fixed;
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px var(--text-theme), 0 0 5px var(--text-theme);
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+/* Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.dunderline {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+.text-clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; /* number of lines to show */
+}
+
+.text-clamp.line-clamp-1 {
+  -webkit-line-clamp: 1; /* number of lines to show */
+}
+.text-clamp.line-clamp-2 {
+  -webkit-line-clamp: 2; /* number of lines to show */
+}
+.text-clamp.line-clamp-3 {
+  -webkit-line-clamp: 3; /* number of lines to show */
+}
+.text-clamp.line-clamp-4 {
+  -webkit-line-clamp: 4; /* number of lines to show */
+}
+.text-clamp.line-clamp-5 {
+  -webkit-line-clamp: 5; /* number of lines to show */
+}
+.text-clamp.line-clamp-6 {
+  -webkit-line-clamp: 6; /* number of lines to show */
+}
+
+.appear-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.appear-enter-active {
+  opacity: 1;
+  transform: scale(1);
+}
+.appear-exit {
+  opacity: 1;
+}
+.appear-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+}

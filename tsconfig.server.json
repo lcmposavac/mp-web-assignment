@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "module": "commonjs",
+    "outDir": "dist",
+    "noEmit": false,
+    "typeRoots": ["./typings", "./node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "#root/*": ["./*"]
+    }
+  },
+  "include": ["src/server", "./typings/**/*.ts"]
+}
